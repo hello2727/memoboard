@@ -1,6 +1,7 @@
 package com.example.open;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -10,9 +11,12 @@ import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.io.ByteArrayOutputStream;
@@ -27,6 +31,8 @@ public class RcvAdapter extends RecyclerView.Adapter<RcvAdapter.ViewHolder> {
     private Activity activity;
     private List<Memo> dataList;
     private Realm realm;
+
+    private Context mContext;
 
     public RcvAdapter(Activity activity, List<Memo> dataList) {
         this.activity = activity;
@@ -51,6 +57,7 @@ public class RcvAdapter extends RecyclerView.Adapter<RcvAdapter.ViewHolder> {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
                     int position = getAdapterPosition();
                     Memo clickedItem = dataList.get(position);
 
@@ -59,6 +66,7 @@ public class RcvAdapter extends RecyclerView.Adapter<RcvAdapter.ViewHolder> {
                     i.putExtra("content", clickedItem.getContent());
                     i.putExtra("cover",clickedItem.getCover());
                     v.getContext().startActivity(i);
+
                 }
             });
 
@@ -88,6 +96,7 @@ public class RcvAdapter extends RecyclerView.Adapter<RcvAdapter.ViewHolder> {
         byte[] HighlightImage = data.getCover();
         Bitmap bitmap = BitmapFactory.decodeByteArray(HighlightImage, 0, HighlightImage.length);
         holder.ivHighlight.setImageBitmap(bitmap);
+
     }
 
     private void removeItemView(int position) {
