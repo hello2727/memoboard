@@ -166,7 +166,7 @@ public class AddActivity extends AppCompatActivity {
     }
 
     //DB저장을 위한 byte 변환
-    private byte[] imageViewToByte(ImageView ivSelected) {
+    public byte[] imageViewToByte(ImageView ivSelected) {
         Bitmap bitmap = ((BitmapDrawable)ivSelected.getDrawable()).getBitmap();
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
