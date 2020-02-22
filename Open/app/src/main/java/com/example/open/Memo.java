@@ -7,9 +7,7 @@ public class Memo extends RealmObject {
 
     @Override
     public String toString() {
-        return "Memo{" +
-                "text='" + title + '\'' +
-                '}';
+        return title;
     }
 
     @Required

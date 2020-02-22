@@ -1,9 +1,11 @@
 package com.example.open;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Build;
+import android.os.Parcelable;
 import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +16,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.io.ByteArrayOutputStream;
+import java.io.Serializable;
 import java.util.List;
 
 import io.realm.Realm;
@@ -44,6 +47,20 @@ public class RcvAdapter extends RecyclerView.Adapter<RcvAdapter.ViewHolder> {
             tvHeadline = itemView.findViewById(R.id.headline);
             tvBodyline = itemView.findViewById(R.id.bodyline);
             ivHighlight = itemView.findViewById(R.id.ivHighlight);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = getAdapterPosition();
+                    Memo clickedItem = dataList.get(position);
+
+                    Intent i = new Intent(v.getContext(), Details.class);
+                    i.putExtra("title", clickedItem.getTitle()); //cardview의 title 보내기
+                    i.putExtra("content", clickedItem.getContent());
+                    i.putExtra("cover",clickedItem.getCover());
+                    v.getContext().startActivity(i);
+                }
+            });
 
             itemView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override

@@ -94,7 +94,6 @@ public class MainActivity extends AppCompatActivity {
             list.add(new Memo(title,content,cover));
             rcvAdapter = new RcvAdapter(MainActivity.this,list);
             rcv.setAdapter(rcvAdapter);
-
         }
     }
 }
