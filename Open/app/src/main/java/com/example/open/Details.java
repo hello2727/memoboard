@@ -1,10 +1,12 @@
 package com.example.open;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -14,6 +16,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -97,23 +100,26 @@ public class Details extends AppCompatActivity {
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopupMenu popup= new PopupMenu(getApplicationContext(), v);//v는 클릭된 뷰를 의미
-
-                getMenuInflater().inflate(R.menu.option_button, popup.getMenu());
-                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                /*
+                final String[] versionArray = new String[] {"갤러리","카메라","url"};
+                AlertDialog.Builder dlg = new AlertDialog.Builder(getApplicationContext());
+                dlg.setTitle("이미지 가져오기");
+                dlg.setItems(versionArray, new DialogInterface.OnClickListener() {
                     @Override
-                    public boolean onMenuItemClick(MenuItem item) {
-                        switch (item.getItemId()){
-                            case R.id.btnGallery:
-                                break;
-                            case R.id.btnCamera:
-                                break;
-                            case R.id.btnUrl:
-                                break;
+                    public void onClick(DialogInterface dialog, int which) {
+                        if(versionArray[which] == "갤러리"){
+
+                        }else if(versionArray[which] == "카메라"){
+
+                        }else if(versionArray[which] == "url"){
+
                         }
-                        return false;
                     }
                 });
+                dlg.setPositiveButton("닫기",null);
+                dlg.show();
+                
+                 */
             }
         });
 
