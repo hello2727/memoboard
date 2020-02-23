@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin: 'realm-android'
+apply plugin: 'realm-android' //realm 데이터베이스
 
 android {
     compileSdkVersion 28
@@ -18,7 +18,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    realm {
+    realm { //realm 데이터베이스
         syncEnabled = true;
     }
 }
