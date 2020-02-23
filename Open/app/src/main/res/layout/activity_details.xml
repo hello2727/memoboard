@@ -12,12 +12,22 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center">
+        <Button
+            android:id="@+id/btnDelete"
+            style="@style/Widget.AppCompat.Button.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/button_background"
+            android:text="사진삭제"
+            android:textColor="#F44336" />
 
         <Button
             android:id="@+id/btnModify"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="match_parent"
+            android:background="@drawable/button_background2"
+            android:layout_width="300dp"
             android:layout_height="40dp"
+            android:layout_margin="5dp"
             android:text="수정"
             android:textColor="#000"
             android:textSize="17sp"/>
@@ -37,9 +47,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
                 android:layout_margin="15dp"
-                android:padding="10dp"
+                android:padding="2dp"
                 android:layout_gravity="center"
                 android:scaleType="fitXY" />
+
             <EditText
                 android:id="@+id/editTitle2"
                 android:layout_width="match_parent"

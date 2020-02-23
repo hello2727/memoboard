@@ -91,7 +91,16 @@ public class RcvAdapter extends RecyclerView.Adapter<RcvAdapter.ViewHolder> {
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         Memo data = dataList.get(position);
         holder.tvHeadline.setText(data.getTitle());
-        holder.tvBodyline.setText(data.getContent());
+
+        String strAll = data.getContent();
+        String strPart = null;
+        if(strAll.length()>=10){
+            strPart = strAll.substring(0,10);
+            holder.tvBodyline.setText(strPart+" ...");
+        }else{
+            strPart = strAll;
+            holder.tvBodyline.setText(strPart);
+        }
 
         byte[] HighlightImage = data.getCover();
         Bitmap bitmap = BitmapFactory.decodeByteArray(HighlightImage, 0, HighlightImage.length);

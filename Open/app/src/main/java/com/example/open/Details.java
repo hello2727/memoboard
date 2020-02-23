@@ -1,22 +1,36 @@
 package com.example.open;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
+import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
+import static android.content.ContentValues.TAG;
+
 public class Details extends AppCompatActivity {
-    Button btnModify;
+    Button btnModify, btnDelete;
     TextView editTitle2, editContent2;
     ImageView ivSelected2;
 
@@ -34,6 +48,7 @@ public class Details extends AppCompatActivity {
 
         realm = Realm.getDefaultInstance();
         btnModify = findViewById(R.id.btnModify);
+        btnDelete = findViewById(R.id.btnDelete);
         editTitle2 = findViewById(R.id.editTitle2);
         editContent2 = findViewById(R.id.editContent2);
         ivSelected2 = findViewById(R.id.ivSelected2);
@@ -71,6 +86,12 @@ public class Details extends AppCompatActivity {
 
                     }
                 });
+            }
+        });
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
     }
