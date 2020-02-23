@@ -1,6 +1,7 @@
 package com.example.open;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.PopupMenu;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
@@ -13,6 +14,9 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -30,7 +34,7 @@ import io.realm.RealmConfiguration;
 import static android.content.ContentValues.TAG;
 
 public class Details extends AppCompatActivity {
-    Button btnModify, btnDelete;
+    Button btnModify, btnAdd, btnDelete;
     TextView editTitle2, editContent2;
     ImageView ivSelected2;
 
@@ -48,6 +52,7 @@ public class Details extends AppCompatActivity {
 
         realm = Realm.getDefaultInstance();
         btnModify = findViewById(R.id.btnModify);
+        btnAdd = findViewById(R.id.btnAdd);
         btnDelete = findViewById(R.id.btnDelete);
         editTitle2 = findViewById(R.id.editTitle2);
         editContent2 = findViewById(R.id.editContent2);
@@ -88,6 +93,30 @@ public class Details extends AppCompatActivity {
                 });
             }
         });
+
+        btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopupMenu popup= new PopupMenu(getApplicationContext(), v);//v는 클릭된 뷰를 의미
+
+                getMenuInflater().inflate(R.menu.option_button, popup.getMenu());
+                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        switch (item.getItemId()){
+                            case R.id.btnGallery:
+                                break;
+                            case R.id.btnCamera:
+                                break;
+                            case R.id.btnUrl:
+                                break;
+                        }
+                        return false;
+                    }
+                });
+            }
+        });
+
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
