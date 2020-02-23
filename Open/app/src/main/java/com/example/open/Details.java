@@ -118,7 +118,7 @@ public class Details extends AppCompatActivity {
                 });
                 dlg.setPositiveButton("닫기",null);
                 dlg.show();
-                
+
                  */
             }
         });
