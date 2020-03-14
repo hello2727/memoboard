@@ -1,1 +1,1 @@
-# LINE_memoboard
+# J's 메모장
