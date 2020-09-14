@@ -5,29 +5,75 @@
 ## 2. 환경설정
 - Build.gradle(module)
 ```
-// ted permission
-    implementation 'gun0912.ted:tedpermission:2.1.1'
-    // Gson
-    implementation 'com.google.code.gson:gson:2.8.5'
-    // retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
-    implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
-    // rxJava
-    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.0'
-    // okhttp
-    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
-    // naver map api
-    implementation 'com.naver.maps.open:naver-map-api:2.1.2@aar'
-    // firebase dynamic link
-    implementation 'com.google.firebase:firebase-core:16.0.4'
-    implementation 'com.google.firebase:firebase-dynamic-links:16.1.2'
-    // glide
-    implementation 'com.github.bumptech.glide:okhttp3-integration:4.8.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+apply plugin: 'com.android.application'
+apply plugin: 'realm-android' //realm 데이터베이스
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.example.open"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    realm { //realm 데이터베이스
+        syncEnabled = true;
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.google.android.material:material:1.1.0' //디자인
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+}
 ```
+
+- Build.gradle(project)
+```
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.0.1'
+        classpath "io.realm:realm-gradle-plugin:3.1.4" //realm 데이터베이스
+        
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        mavenLocal()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+```
+
 - Manifest
 ```
 <?xml version="1.0" encoding="utf-8"?>
