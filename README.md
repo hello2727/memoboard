@@ -2,7 +2,6 @@
 >앨범과 같이 사진과 글을 저장할 수 있는 좀 더 업그레이드 된 메모장 어플리케이션
 
 ## 결과물
----------------------------
 <div>
   <img width="300", src="https://user-images.githubusercontent.com/43267195/93054095-cf862a80-f6a3-11ea-8784-44fa7567d021.jpg">
   <img width="300", src="https://user-images.githubusercontent.com/43267195/93054148-e3ca2780-f6a3-11ea-976b-4dc96fd4ad58.jpg">
@@ -12,7 +11,6 @@
 
 
 ## 환경설정
-----------------------------
 - Build.gradle(module)
 ```
 apply plugin: 'com.android.application'
