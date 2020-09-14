@@ -30,18 +30,30 @@
 ```
 - Manifest
 ```
-<uses-feature
-        android:name="android.hardware.nfc"
-        android:required="false" />
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.open">
 
-    <!-- NFC 퍼미션 -->
-    <uses-permission android:name="android.permission.NFC" />
-    <!-- HTTP 퍼미션 -->
+    //서버 이미지 로딩(PICASSO)
     <uses-permission android:name="android.permission.INTERNET" />
-    <!-- GPS 퍼미션 -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <!-- 와이파이 퍼미션-->
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Details"/>
+        <activity android:name=".AddActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
 ```
