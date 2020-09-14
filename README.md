@@ -3,13 +3,13 @@
 
 ## 결과물
 <div>
-  <img width="300", src="https://user-images.githubusercontent.com/43267195/93054095-cf862a80-f6a3-11ea-8784-44fa7567d021.jpg">
-  <img width="300", src="https://user-images.githubusercontent.com/43267195/93054148-e3ca2780-f6a3-11ea-976b-4dc96fd4ad58.jpg">
-  <img width="300", src="https://user-images.githubusercontent.com/43267195/93054199-f7758e00-f6a3-11ea-9d2d-89922d726371.jpg">    
+  <img width="200", src="https://user-images.githubusercontent.com/43267195/93054095-cf862a80-f6a3-11ea-8784-44fa7567d021.jpg">
+  <img width="200", src="https://user-images.githubusercontent.com/43267195/93054148-e3ca2780-f6a3-11ea-976b-4dc96fd4ad58.jpg">
+  <img width="200", src="https://user-images.githubusercontent.com/43267195/93054199-f7758e00-f6a3-11ea-9d2d-89922d726371.jpg">    
 </div>
 <div>
-  <img width="300", src="https://user-images.githubusercontent.com/43267195/93054377-30156780-f6a4-11ea-8921-5145672527c4.jpg">
-  <img width="300", src="https://user-images.githubusercontent.com/43267195/93054394-399ecf80-f6a4-11ea-9e12-e8266c863b4f.jpg">
+  <img width="200", src="https://user-images.githubusercontent.com/43267195/93054377-30156780-f6a4-11ea-8921-5145672527c4.jpg">
+  <img width="200", src="https://user-images.githubusercontent.com/43267195/93054394-399ecf80-f6a4-11ea-9e12-e8266c863b4f.jpg">
 </div>
 
 
