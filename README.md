@@ -1,7 +1,17 @@
-# J's 메모장
+J's 메모장
+==================
 >앨범과 같이 사진과 글을 저장할 수 있는 좀 더 업그레이드 된 메모장 어플리케이션
 
-## 결과물
+앱스토어 등록여부
+-----------------
+* 미등록 
+
+개발환경
+-----------------
+* Android Java Realm PICASSO
+
+결과물
+-----------------
 <div>
   <img width="250", src="https://user-images.githubusercontent.com/43267195/93054095-cf862a80-f6a3-11ea-8784-44fa7567d021.jpg">
   <img width="250", src="https://user-images.githubusercontent.com/43267195/93054148-e3ca2780-f6a3-11ea-976b-4dc96fd4ad58.jpg">
@@ -12,8 +22,8 @@
   <img width="250", src="https://user-images.githubusercontent.com/43267195/93054394-399ecf80-f6a4-11ea-9e12-e8266c863b4f.jpg">
 </div>
 
-
-## 환경설정
+환경설정
+-----------------
 - Build.gradle(module)
 ```
 apply plugin: 'com.android.application'
